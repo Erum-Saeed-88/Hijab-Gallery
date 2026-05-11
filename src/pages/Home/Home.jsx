@@ -71,10 +71,6 @@ function Home() {
 
       {/* Toast */}
       <Toast message={toast} />
-
-      <footer className="hsg-footer">
-        Made with ♥ for the hijab community · {new Date().getFullYear()}
-      </footer>
     </div>
   );
 }

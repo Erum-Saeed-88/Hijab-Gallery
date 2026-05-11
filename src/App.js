@@ -7,6 +7,7 @@ import { AuthProvider } from "./context/AuthContext";
 // Components
 import Navbar    from "./components/Navbar/Navbar";
 import Toast     from "./components/Toast/Toast";
+import Footer from './components/Footer/Footer'
 
 // Pages
 import Home   from "./pages/Home/Home";
@@ -40,6 +41,7 @@ function App() {
 
         {/* Global toast (for auth messages from Navbar) */}
         <Toast message={toast} />
+        <Footer />
       </BrowserRouter>
     </AuthProvider>
   );

@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600&display=swap');
+
+  *, *::before, *::after { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+  }
+
+  :root {
+    --brown: #6B3A2A;
+    --brown-light: #8B5A3A;
+    --brown-dark: #3D1F14;
+    --gold: #D4A017;
+    --gold-light: #F0C040;
+    --gold-pale: #FBF0D0;
+    --crimson: #A81C2A;
+    --crimson-dark: #7A1020;
+    --cream: #FAF6EE;
+    --text: #2C1A0E;
+    --text-muted: #7A5C4A;
+    --card-bg: #FFFCF5;
+    --border: rgba(107,58,42,0.18);
+    --shadow: 0 4px 24px rgba(107,58,42,0.12);
+    --grad: linear-gradient(135deg, #6B3A2A 0%, #A81C2A 50%, #D4A017 100%);
+    --grad-soft: linear-gradient(160deg, #FBF0D0 0%, #FAF6EE 60%, #FFF5F5 100%);
+  }
+
+
+/* ── Footer ── */
+  .hsg-footer {
+    background-color: var(--brown-dark);
+    text-align:center; 
+    padding:1rem;
+    color:var(--gold-light); 
+    font-size:0.8rem;
+    border-top:1px solid var(--border);
+  }

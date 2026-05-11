@@ -1,0 +1,158 @@
+
+/* ── Base navbar ─────────────────────────────────────────────────────────── */
+.hsg-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background: var(--brown-dark);
+  height: 56px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  flex-wrap: wrap;
+}
+
+/* ── Brand ───────────────────────────────────────────────────────────────── */
+.hsg-nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: var(--gold-light);
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  z-index: 2;
+}
+.hsg-nav-brand:hover { color: #fff; }
+
+/* ── Desktop actions ─────────────────────────────────────────────────────── */
+.hsg-nav-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+.hsg-nav-actions a { text-decoration: none; }
+
+.desktop-actions { display: flex; } /* shown on desktop */
+
+/* ── User chip (desktop) ─────────────────────────────────────────────────── */
+.user-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(212, 160, 23, 0.15);
+  border: 1px solid rgba(212, 160, 23, 0.3);
+  border-radius: 20px;
+  padding: 0.3rem 0.9rem;
+  color: var(--gold-light);
+  font-size: 0.82rem;
+}
+
+/* ── Hamburger button ────────────────────────────────────────────────────── */
+.hamburger {
+  display: none;           /* hidden on desktop */
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 2;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.hamburger:hover { background: rgba(255,255,255,0.08); }
+
+/* The three lines */
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--gold-light);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+/* Animate to X when open */
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Mobile dropdown menu ────────────────────────────────────────────────── */
+.mobile-menu {
+  display: none;              /* layout: only shown on small screens */
+  width: 100%;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0 1.25rem 1rem;
+  background: var(--brown-dark);
+  border-top: 1px solid rgba(255,255,255,0.06);
+
+  /* slide-down animation */
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.25s ease, padding 0.3s ease;
+}
+.mobile-menu.show {
+  max-height: 220px;
+  opacity: 1;
+  padding-top: 0.75rem;
+}
+
+/* Mobile user chip */
+.mobile-user-chip {
+  color: var(--gold-light);
+  font-size: 0.85rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 0.25rem;
+}
+
+/* Mobile buttons — full width */
+.mobile-btn {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+.mobile-btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--gold);
+  color: var(--gold-light);
+}
+.mobile-btn-outline:hover { background: var(--gold); color: var(--brown-dark); }
+
+.mobile-btn-gold {
+  background: var(--gold);
+  border: none;
+  color: var(--brown-dark);
+}
+.mobile-btn-gold:hover { background: var(--gold-light); }
+
+/* Remove link underline inside mobile menu */
+.mobile-menu a { text-decoration: none; width: 100%; display: block; }
+
+/* ── Responsive breakpoint ───────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .hsg-nav {
+    height: auto;          /* allow navbar to grow for the dropdown */
+    min-height: 56px;
+    align-items: center;
+    padding: 0 1.25rem;
+  }
+
+  /* Hide desktop buttons, show hamburger */
+  .desktop-actions { display: none; }
+  .hamburger       { display: flex; }
+
+  /* Show mobile dropdown when .show is applied */
+  .mobile-menu { display: flex; }
+}

@@ -1,0 +1,6 @@
+/* StyleModal uses modal-* classes from global.css */
+/* Add any overrides here */
+
+.modal-box {
+  max-width: 90vh;
+}
